@@ -16,4 +16,4 @@ function close_window() {
 	window.close();
 }
 
-window.onload = showWindow;
+window.onload = show_Window;

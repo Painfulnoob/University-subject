@@ -26,28 +26,6 @@ function show_clock(){
         }
         setTimeout(show_clock, 1000);  //1초마다 갱신
 }
-function setCookie(name, value, expiredays) {
-	var date = new Date();
-	date.setDate(date.getDate() + expiredays);
-	document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString() + "SameSite=None; Secure";
-}
-
-
-function getCookie(name) {
-	var cookie = document.cookie;
-	console.log("쿠키를 요청합니다.");
-	if (cookie != "") {
-		var cookie_array = cookie.split("; ");
-		for ( var index in cookie_array) {
-			var cookie_name = cookie_array[index].split("=");
-			
-			if (cookie_name[0] =="popupYN") {
-				return cookie_name[1];
-			}
-		}
-	}
-	return ;
-}
 function closePopup() {
 	if (document.getElementById('check_popup').value) {
 		setCookie("popupYN","N", 1);
@@ -55,3 +33,11 @@ function closePopup() {
 		self.close();
 	}
 }
+function addJavascript(jsname) { // 자바스크립트 외부 연동
+	var th = document.getElementsByTagName('head')[0];
+	var s = document.createElement('script');
+	s.setAttribute('type','text/javascript');
+	s.setAttribute('src',jsname);
+	th.appendChild(s);
+}
+addJavascript('/js/cookie.js'); // 쿠키 함수
