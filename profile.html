@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>메인화면 예제</title>
+	  <script type="text/javascript" src="js/map2.js" defer="defer"></script>
+    <script type="text/javascript">
+        function copyToClipboard() {
+            var profileLink = document.getElementById("profileLink").value;
+            var tempTextArea = document.createElement("textarea");
+            tempTextArea.value = profileLink;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextArea);
+            alert("프로필 링크가 클립보드에 복사되었습니다.");
+        }
+    </script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17bd533b1eea3a8c2702f3f4b3714e2b&libraries=services"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous">
+</head>
+<body>
+<section style="background-color: #eee;">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="#">홈페이지</a></li>
+                        <li class="breadcrumb-item"><a href="#">사용자</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="img/profile.png"
+                             alt="avatar"
+                             class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3">김 민준</h5>
+                        <p class="text-muted mb-1">대학생</p>
+                        <p class="text-muted mb-4">성결대학교, 미디어소프트웨어</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            <button type="button" class="btn btn-primary">Follow</button>
+                            <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+                            <audio src="media/awaken.mp3" controls="controls"></audio>
+                        </div>
+						 <button class="btn btn-primary" onclick="copyToClipboard()">프로필 링크 복사</button>
+                        <input type="text" class="form-control d-inline-block" id="profileLink"
+                               value="https://university-subject-gtuhe.run.goorm.site/profile/profile.html">
+                    </div>
+                </div>
+                <div class="card mb-4 mb-lg-0">
+                    <div class="card-body p-0">
+                        <ul class="list-group list-group-flush rounded-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fas fa-globe fa-lg text-warning"></i>
+                                <p class="mb-0">https://mdbootstrap.com</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fab fa-github fa-lg" style="color: #333333;"></i>
+                                <p class="mb-0">mdbootstrap</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+                                <p class="mb-0">@mdbootstrap</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                                <p class="mb-0">mdbootstrap</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                                <p class="mb-0">mdbootstrap</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">성, 이름</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">김 민준</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">이메일 주소</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">alswns03@sungkyul.ac.kr</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">핸드폰 연락처</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">010 5418 4998</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">기타 연락처</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">(098) 765-4321</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">주소(근무지)</p>
+                            </div>
+<div class="map_wrap">
+    <div id="map" style="width:800px;height:600px;position:relative;overflow:hidden;"></div>
+    <div id="menu_wrap" class="bg_white">
+        <div class="option">
+            <div>
+                <form onsubmit="searchPlaces(); return false;">
+                    키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15"> 
+                    <button type="submit">검색하기</button> 
+                </form>
+            </div>
+        </div>
+        <hr>
+        <ul id="placesList"></ul>
+        <div id="pagination"></div>
+    </div>
+</div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">경기도 안양시 만안구 성결대학로 53 성결대학교</p>
+                            </div>
+                        </div>
+                    </div>
+  <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l0JfCluVH1o" width="800" height="600" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
